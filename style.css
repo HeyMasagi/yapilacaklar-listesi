@@ -1,0 +1,155 @@
+/* Tüm öğeler için margin, padding sıfırlama */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sayfanın arka planını siyah yapıyoruz */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #111; /* Siyah arka plan */
+    color: #f0e68c; /* Sarı yazı rengi */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column; /* Üst şeridi ve içerikleri dikey hizalamak için */
+}
+
+/* Sayfanın en üst kısmında sarı şerit */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Şeridin yüksekliğini büyüttük */
+    background-color: #ffd700; /* Sarı renk */
+    box-shadow: 0 0 15px 5px rgba(255, 223, 51, 0.8); /* Sarı renkli box-shadow */
+}
+
+/* Container'ı ortaladık, gri renk verdik ve sarı box-shadow ekledik */
+.container {
+    width: 100%;
+    max-width: 500px;
+    background-color: #333; /* Gri kutu */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 5px rgba(255, 223, 51, 0.8); /* Sarı renkli box-shadow */
+    text-align: center;
+    position: relative; /* Üst kısım için yer bırakma */
+    margin-top: 60px; /* Üst kısmı yerleştirmek için */
+}
+
+/* Başlık kısmının stilini değiştirdik */
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #f0e68c; /* Sarı yazı rengi */
+}
+
+/* Input ve buton kısmının stilini yaptık */
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 75%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #888;
+    background-color: #555;
+    color: #f0e68c;
+    font-size: 1rem;
+}
+
+button {
+    width: 20%;
+    padding: 10px;
+    background-color: #66bb6a;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #388e3c;
+}
+
+/* Liste kısmını stilize ettik */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #555;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* Tamamlanan görevlerin üzerine çizgi ekledik */
+li.completed {
+    text-decoration: line-through; /* Görev tamamlandığında üzerine çizgi gelir */
+    background-color: #444; /* Tamamlanan görev biraz daha koyu */
+}
+
+li span {
+    flex: 1;
+}
+
+/* Silme butonunun stilini ekledik */
+.delete-btn {
+    background-color: #e53935;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Tamamlama butonunun (✔) stilini öne alıyoruz */
+.check-btn {
+    background-color: #f0e68c; /* Sarı renk */
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+.check-btn:hover {
+    background-color: #e1c23b;
+}
+
+/* Tamamlama butonunu ön plana almak için */
+.check-btn {
+    z-index: 1; /* Ön planda olması için */
+}
+/* Sayfanın sol alt köşesine yazıyı yerleştirme */
+.credits {
+    position: absolute;
+    bottom: 20px; /* Sayfanın alt kısmından 20px yukarıda */
+    left: 20px; /* Sayfanın sol kısmından 20px uzaklık */
+    color: #f0e68c; /* Sarı renk */
+    font-size: 24px; /* Daha büyük yazı */
+    font-family: 'Arial', sans-serif;
+    z-index: 10; /* Diğer içeriklerin önünde olması için */
+}
+
+
